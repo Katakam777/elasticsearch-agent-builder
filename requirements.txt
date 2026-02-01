@@ -2,3 +2,5 @@ streamlit
 python-dotenv
 elasticsearch
 boto3
+langchain-aws
+langchain-core
