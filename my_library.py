@@ -1,8 +1,8 @@
 from elasticsearch import Elasticsearch
 
 # 1. Put your secret codes here!
-CLOUD_ID = "db55515d970544adb8eefe322d037e67:dXMtZWFzdC0yLmF3cy5lbGFzdGljLWNsb3VkLmNvbTo0NDMkYzk3MTg3NzE1YzI0NGUzNThlZWNlYmU4MGMzNjk5MmEkMzY2ZWIwM2VlNTg5NDM0MjhkNjhlMTljYWExNTJiMWE="
-API_KEY = "cDA0UjZac0JNaTc5bWY0OE1YcXE6Zkdtc0N1bXJlb3VQWnJ4Ul9ScHc3dw=="
+CLOUD_ID = "ELASTIC_CLOUD_ID"
+API_KEY = "ELASTIC_API_KEY"
 
 # 2. Connect to the Library
 client = Elasticsearch(

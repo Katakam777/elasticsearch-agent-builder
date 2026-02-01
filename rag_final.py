@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 from langchain_aws import ChatBedrock
 
 # 1. Connect to Library
-es = Elasticsearch(cloud_id="db55515d970544adb8eefe322d037e67:dXMtZWFzdC0yLmF3cy5lbGFzdGljLWNsb3VkLmNvbTo0NDMkYzk3MTg3NzE1YzI0NGUzNThlZWNlYmU4MGMzNjk5MmEkMzY2ZWIwM2VlNTg5NDM0MjhkNjhlMTljYWExNTJiMWE=", api_key="cDA0UjZac0JNaTc5bWY0OE1YcXE6Zkdtc0N1bXJlb3VQWnJ4Ul9ScHc3dw==")
+es = Elasticsearch(cloud_id="ELASTIC_CLOUD_ID", api_key="ELASTIC_API_KEY")
 
 # 2. Connect to Brain (Using Haiku to avoid speed limits)
 llm = ChatBedrock(model_id="anthropic.claude-3-haiku-20240307-v1:0")
