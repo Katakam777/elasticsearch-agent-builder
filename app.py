@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Now use these variables instead of hardcoded strings
-CLOUD_ID = os.getenv("db55515d970544adb8eefe322d037e67:dXMtZWFzdC0yLmF3cy5lbGFzdGljLWNsb3VkLmNvbTo0NDMkYzk3MTg3NzE1YzI0NGUzNThlZWNlYmU4MGMzNjk5MmEkMzY2ZWIwM2VlNTg5NDM0MjhkNjhlMTljYWExNTJiMWE=")
-API_KEY = os.getenv("cDA0UjZac0JNaTc5bWY0OE1YcXE6Zkdtc0N1bXJlb3VQWnJ4Ul9ScHc3dw==")
+CLOUD_ID = os.getenv("ELASTIC_CLOUD_ID")
+API_KEY = os.getenv("ELASTIC_API_KEY")
 
 
 
@@ -38,8 +38,8 @@ st.set_page_config(page_title="Byte's AI Assistant", page_icon="🐲")
 st.title("🐲 Byte's AI Assistant")
 
 # Initialize Connections
-CLOUD_ID = "db55515d970544adb8eefe322d037e67:dXMtZWFzdC0yLmF3cy5lbGFzdGljLWNsb3VkLmNvbTo0NDMkYzk3MTg3NzE1YzI0NGUzNThlZWNlYmU4MGMzNjk5MmEkMzY2ZWIwM2VlNTg5NDM0MjhkNjhlMTljYWExNTJiMWE="
-API_KEY = "cDA0UjZac0JNaTc5bWY0OE1YcXE6Zkdtc0N1bXJlb3VQWnJ4Ul9ScHc3dw=="
+CLOUD_ID = "ELASTIC_CLOUD_ID"
+API_KEY = "ELASTIC_API_KEY"
 
 es = Elasticsearch(cloud_id=CLOUD_ID, api_key=API_KEY)
 bedrock_client = boto3.client(service_name="bedrock-runtime", region_name="us-east-1")
