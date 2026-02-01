@@ -1,12 +1,21 @@
-
+import streamlit as st
 import os
-from dotenv import load_dotenv
-load_dotenv()
+from elasticsearch import Elasticsearch
 
-# Now use these variables instead of hardcoded strings
-CLOUD_ID = os.getenv("ELASTIC_CLOUD_ID")
-API_KEY = os.getenv("ELASTIC_API_KEY")
+# Use st.secrets (Streamlit Cloud) or os.getenv (Local)
+CLOUD_ID = st.secrets.get("ELASTIC_CLOUD_ID")
+API_KEY = st.secrets.get("ELASTIC_API_KEY")
 
+if not CLOUD_ID or not API_KEY:
+    st.error("Missing Elasticsearch Credentials! Please check your Streamlit Secrets.")
+    st.stop()
+
+# Initialize the client
+try:
+    es = Elasticsearch(cloud_id=CLOUD_ID, api_key=API_KEY)
+except Exception as e:
+    st.error(f"Failed to connect to Elasticsearch: {e}")
+    st.stop()
 
 
 import streamlit as st  # <--- THIS IS THE MISSING LINE!
